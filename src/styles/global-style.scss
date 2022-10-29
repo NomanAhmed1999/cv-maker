@@ -1,0 +1,579 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: black;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+@font-face {
+    font-family: "DejaVu Sans";
+    src: url("https://kendo.cdn.telerik.com/2017.2.621/styles/fonts/DejaVu/DejaVuSans.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "DejaVu-bold";
+    font-weight: bold;
+    src: url("https://kendo.cdn.telerik.com/2017.2.621/styles/fonts/DejaVu/DejaVuSans-Bold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "DejaVu Sans";
+    font-style: italic;
+    src: url("https://kendo.cdn.telerik.com/2017.2.621/styles/fonts/DejaVu/DejaVuSans-Oblique.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "DejaVu Sans";
+    font-weight: bold;
+    font-style: italic;
+    src: url("https://kendo.cdn.telerik.com/2017.2.621/styles/fonts/DejaVu/DejaVuSans-Oblique.ttf") format("truetype");
+}
+
+.header-fixed {
+    background-color: #292c2f;
+    box-shadow: 0 1px 1px #ff8000;
+    padding: 20px 40px;
+    height: 80px;
+    color: #ffffff;
+    box-sizing: border-box;
+    top: -100px;
+
+    -webkit-transition: top 0.3s;
+    transition: top 0.3s;
+}
+
+.header-fixed .header-limiter {
+    max-width: 1200px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+/*	The header placeholder. It is displayed when the header is fixed to the top of the
+	browser window, in order to prevent the content of the page from jumping up. */
+
+.header-fixed-placeholder {
+    height: 80px;
+    display: none;
+}
+
+/* Logo */
+
+.header-fixed .header-limiter h1 {
+    float: left;
+    font: normal 28px Cookie, Arial, Helvetica, sans-serif;
+    line-height: 40px;
+    margin: 0;
+}
+
+.header-fixed .header-limiter h1 span {
+    color: #5383d3;
+}
+
+/* The navigation links */
+
+.header-fixed .header-limiter a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.header-fixed .header-limiter nav {
+    font: 16px Arial, Helvetica, sans-serif;
+    line-height: 40px;
+    float: right;
+}
+
+.header-fixed .header-limiter nav a {
+    display: inline-block;
+    padding: 0 5px;
+    text-decoration: none;
+    color: #ffffff;
+    opacity: 0.9;
+}
+
+.header-fixed .header-limiter nav a:hover {
+    opacity: 1;
+}
+
+.header-fixed .header-limiter nav a.selected {
+    color: #608bd2;
+    pointer-events: none;
+    opacity: 1;
+}
+
+/* Fixed version of the header */
+
+body.fixed .header-fixed {
+    padding: 10px 40px;
+    height: 50px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+body.fixed .header-fixed-placeholder {
+    display: block;
+}
+
+body.fixed .header-fixed .header-limiter h1 {
+    font-size: 24px;
+    line-height: 30px;
+}
+
+body.fixed .header-fixed .header-limiter nav {
+    line-height: 28px;
+    font-size: 13px;
+}
+
+
+/* Making the header responsive */
+
+@media all and (max-width: 600px) {
+
+    .header-fixed {
+        padding: 20px 0;
+        height: 75px;
+    }
+
+    .header-fixed .header-limiter h1 {
+        float: none;
+        margin: -8px 0 10px;
+        text-align: center;
+        font-size: 24px;
+        line-height: 1;
+    }
+
+    .header-fixed .header-limiter nav {
+        line-height: 1;
+        float: none;
+    }
+
+    .header-fixed .header-limiter nav a {
+        font-size: 13px;
+    }
+
+    body.fixed .header-fixed {
+        display: none;
+    }
+
+}
+
+/*
+	 We are clearing the body's margin and padding, so that the header fits properly.
+	 We are also adding a height to demonstrate the scrolling behavior. You can remove
+	 these styles.
+ */
+
+
+.home-container {
+    width: 100%;
+    height: 89.5vh;
+    // background: url("../../assects/job-bg.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 1;
+    border: 1px solid tomato;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.home-main-heading {
+    background: #000000;
+    color: #ffffff;
+    width: 60%;
+}
+
+.templates-main-container {
+    height: 87vh;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-content: center;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.templates-theme-lg {
+    width: 100%;
+    height: 71vh;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+
+    .soon-h {
+        position: absolute;
+        background: #180000ad;
+        color: white;
+        font-size: 28px;
+        padding: 0 2%;
+
+    }
+}
+
+.templates-theme-temp {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    align-items: flex-end;
+    width: 99%;
+    height: 143px;
+    border: 1px solid orangered;
+    overflow: auto;
+}
+
+.templates-cv-img {
+    margin: 5%;
+    width: 23%;
+    margin: 1% 0 0 0;
+    height: 57vh;
+    cursor: pointer;
+}
+
+.templates-cv-sm {
+    width: 100px;
+    height: 100px;
+    margin: 13px;
+    border: 1px solid orangered;
+    cursor: pointer;
+}
+
+.templates-theme-review {
+    position: absolute;
+    top: -3px;
+    margin: 2%;
+    border: 1px solid orange;
+    background: black;
+    height: 95vh;
+    overflow: auto;
+    width: 700px;
+}
+
+.templates-cv-img-review {
+    margin: 1%;
+    width: 600px;
+    height: 900px;
+}
+
+.cross-icon {
+    color: red;
+    text-align: end;
+    margin: 0 5px;
+    font-size: 20px;
+}
+
+
+.style-3::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgb(240, 233, 233);
+    background-color: #ffffff;
+}
+
+.style-3::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background-color: #F5F5F5;
+}
+
+.style-3::-webkit-scrollbar-thumb {
+    background-color: #ff8000;
+}
+
+.blue-color {
+    color: #5383d3;
+}
+
+.blue-bg-color {
+    background: #2e5ec9;
+}
+
+.next-btn {
+    position: absolute;
+    bottom: 24%;
+    right: 1%;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    margin: 1%;
+
+
+
+    .form-box1 {
+        width: 900px;
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 1%;
+        background: #dcdbe4;
+        overflow: auto;
+        height: 82vh;
+        overflow: auto;
+
+        .cv-container {
+            width: 80%;
+            /* height: 82vh; */
+            /* overflow: auto; */
+            /* border: 2px solid blue; */
+            background: white;
+
+
+            .cv-header {
+                background: #843c0c;
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: no-wrap;
+                align-content: center;
+                align-items: center;
+                // height: 150px;
+            }
+
+            .left-row {
+                text-align: start;
+                color: white;
+                width: 38%;
+                margin-left: 2%;
+
+                h2 {
+                    margin: 0;
+                    font-family: serif;
+                }
+
+                p {
+                    margin: 0;
+                    font-family: inherit;
+                }
+            }
+
+            .right-row {
+                text-align: start;
+                color: white;
+                width: 58%;
+                margin: 0 2% 2% 0;
+
+                span {
+                    font-weight: 700;
+                    font-size: 18px;
+                }
+
+                p {
+                    margin: 0;
+                }
+            }
+
+        }
+
+        .cv-body {
+            h3 {
+                text-align: start;
+                margin: 4% 0px -1.8% 1%;
+                color: #994d12;
+                font-weight: bolder;
+                font-family: sans-serif;
+                padding: 1%;
+            }
+
+            p {
+                text-align: start;
+                margin: 0 0 0 2%;
+            }
+
+            ul {
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+                align-items: flex-start;
+                max-height: 120px;
+                text-align: start;
+            }
+
+            .edu-h {
+                font-weight: 900;
+                font-size: 20px;
+            }
+
+            .edu-field {
+                font-weight: 600;
+                font-size: 18px;
+                font-family: inherit;
+            }
+        }
+
+
+    }
+
+    .form-box2 {
+        width: 30%;
+        height: 89vh;
+        padding: 2%;
+        height: 85vh;
+        overflow: auto;
+
+        label {
+            color: white;
+        }
+
+        .item-arr-container {
+            border: 1px solid #5383d3;
+            width: 100%;
+            margin: 5% 0 !important;
+
+            .item-arr {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                justify-content: space-around;
+                align-items: baseline;
+                align-content: center;
+
+                i {
+                    display: block;
+                    color: #5383d3;
+                }
+
+                p {
+                    color: #5383d3;
+                }
+            }
+
+            .item-arr-inputs-con {
+
+                max-height: 150px;
+                overflow: auto;
+
+                .item-arr-inputs {
+                    input {
+                        width: 20%;
+                        display: inline-block;
+                    }
+                }
+            }
+
+            .item-arr-inputs-skill {
+                input {
+                    width: 90%;
+                }
+            }
+        }
+    }
+}
+
+.color-pur {
+    color: #5383d3;
+
+}
+
+
+// cv View Page
+
+
+.page-container {
+    width: 100%;
+}
+
+.pdf-page {
+    position: relative;
+    margin: 0 auto;
+    color: #333;
+    background-color: #fff;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .3);
+    box-sizing: border-box;
+    font-family: "DejaVu Sans", "Arial", sans-serif;
+    width: 100%;
+}
+
+
+
+
+.cv-container {
+    width: 80%;
+    background: white;
+
+    .size-a4 {
+        width: 600px;
+        border: 1px solid black;
+
+        .cv-header {
+            align-items: flex-start !important;
+        }
+
+        .right-row {
+            width: 51% !important;
+            margin: 5% 0% 2% 4% !important;
+
+            span {
+                font-weight: 700;
+                font-size: 14px !important;
+            }
+
+            p {
+                font-size: 12px !important;
+            }
+        }
+
+    }
+
+    .dropdown-style {
+        width: 100px;
+        background: aliceblue;
+    }
+
+    .cv-body {
+        h3 {
+            margin: 2% 0px -2.5% 1% !important;
+            font-size: 23px !important;
+        }
+
+        p {
+            margin: 0 0 0 2%;
+            font-size: 12px !important;
+        }
+
+        ul {
+            max-height: 100px !important;
+
+            li {
+                font-size: 12px !important;
+            }
+        }
+
+
+        .edu-field {
+            font-size: 15px !important;
+        }
+    }
+}
+
+.img-container {
+    position: relative;
+
+    .soon-p {
+        position: absolute;
+        background: #02021a;
+        color: white;
+        left: 10%;
+        top: 45%;
+        font-size: 12px;
+        text-align: center;
+        width: 80%;
+        font-weight: 400;
+    }
+}
