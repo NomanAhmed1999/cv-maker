@@ -313,11 +313,11 @@ body.fixed .header-fixed .header-limiter nav {
     align-content: center;
     justify-content: center;
     margin: 1%;
-
-
+    gap: 20px;
 
     .form-box1 {
-        width: 900px;
+        width: 100%;
+        max-width: 900px;
         display: flex;
         justify-content: center;
         flex-direction: row;
@@ -329,112 +329,134 @@ body.fixed .header-fixed .header-limiter nav {
         overflow: auto;
 
         .cv-container {
-            width: 80%;
-            /* height: 82vh; */
-            /* overflow: auto; */
-            /* border: 2px solid blue; */
+            width: 100%;
+            max-width: 80%;
             background: white;
-
 
             .cv-header {
                 background: #843c0c;
                 display: flex;
+                flex-wrap: wrap;
                 justify-content: space-around;
-                flex-wrap: no-wrap;
                 align-content: center;
                 align-items: center;
-                // height: 150px;
+                padding: 20px 0;
+
+                .left-row {
+                    text-align: start;
+                    color: white;
+                    width: 100%;
+                    max-width: 38%;
+                    margin-left: 2%;
+                    padding: 10px;
+
+                    h2 {
+                        margin: 0;
+                        font-family: serif;
+                        font-size: clamp(1.5rem, 2vw, 2rem);
+                    }
+
+                    p {
+                        margin: 0;
+                        font-family: inherit;
+                        font-size: clamp(1rem, 1.5vw, 1.2rem);
+                    }
+                }
+
+                .right-row {
+                    text-align: start;
+                    color: white;
+                    width: 100%;
+                    max-width: 58%;
+                    margin: 0 2% 2% 0;
+                    padding: 10px;
+
+                    span {
+                        font-weight: 700;
+                        font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+                    }
+
+                    p {
+                        margin: 0;
+                        font-size: clamp(0.8rem, 1vw, 1rem);
+                    }
+                }
             }
 
-            .left-row {
-                text-align: start;
-                color: white;
-                width: 38%;
-                margin-left: 2%;
+            .cv-body {
+                padding: 20px;
 
-                h2 {
-                    margin: 0;
-                    font-family: serif;
+                h3 {
+                    text-align: start;
+                    margin: 4% 0px -1.8% 1%;
+                    color: #994d12;
+                    font-weight: bolder;
+                    font-family: sans-serif;
+                    padding: 1%;
+                    font-size: clamp(1.2rem, 1.5vw, 1.5rem);
                 }
 
                 p {
-                    margin: 0;
+                    text-align: start;
+                    margin: 0 0 0 2%;
+                    font-size: clamp(0.9rem, 1.1vw, 1.1rem);
+                }
+
+                ul {
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    max-height: 120px;
+                    text-align: start;
+                    padding-left: 20px;
+                    font-size: clamp(0.9rem, 1.1vw, 1.1rem);
+                }
+
+                .edu-h {
+                    font-weight: 900;
+                    font-size: clamp(1rem, 1.2vw, 1.2rem);
+                }
+
+                .edu-field {
+                    font-weight: 600;
+                    font-size: clamp(0.9rem, 1.1vw, 1.1rem);
                     font-family: inherit;
                 }
             }
-
-            .right-row {
-                text-align: start;
-                color: white;
-                width: 58%;
-                margin: 0 2% 2% 0;
-
-                span {
-                    font-weight: 700;
-                    font-size: 18px;
-                }
-
-                p {
-                    margin: 0;
-                }
-            }
-
         }
-
-        .cv-body {
-            h3 {
-                text-align: start;
-                margin: 4% 0px -1.8% 1%;
-                color: #994d12;
-                font-weight: bolder;
-                font-family: sans-serif;
-                padding: 1%;
-            }
-
-            p {
-                text-align: start;
-                margin: 0 0 0 2%;
-            }
-
-            ul {
-                display: flex;
-                flex-wrap: wrap;
-                flex-direction: column;
-                align-items: flex-start;
-                max-height: 120px;
-                text-align: start;
-            }
-
-            .edu-h {
-                font-weight: 900;
-                font-size: 20px;
-            }
-
-            .edu-field {
-                font-weight: 600;
-                font-size: 18px;
-                font-family: inherit;
-            }
-        }
-
-
     }
 
     .form-box2 {
-        width: 30%;
-        height: 89vh;
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        min-height: 89vh;
         padding: 2%;
-        height: 85vh;
         overflow: auto;
 
-        label {
-            color: white;
+        .form-group {
+            width: 100%;
+        }
+
+        .row {
+            margin: 0;
+        }
+
+        .col {
+            padding: 0 5px;
+        }
+
+        input, textarea {
+            width: 100%;
+            margin: 10px 0;
         }
 
         .item-arr-container {
             border: 1px solid #5383d3;
             width: 100%;
-            margin: 5% 0 !important;
+            margin: 20px 0 !important;
+            padding: 10px;
 
             .item-arr {
                 display: flex;
@@ -443,33 +465,40 @@ body.fixed .header-fixed .header-limiter nav {
                 justify-content: space-around;
                 align-items: baseline;
                 align-content: center;
+                margin-bottom: 10px;
 
                 i {
                     display: block;
                     color: #5383d3;
+                    cursor: pointer;
+                    font-size: 1.2rem;
                 }
 
                 p {
                     color: #5383d3;
+                    margin: 0;
                 }
             }
 
             .item-arr-inputs-con {
-
                 max-height: 150px;
                 overflow: auto;
 
                 .item-arr-inputs {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 10px;
+
                     input {
-                        width: 20%;
-                        display: inline-block;
+                        width: calc(50% - 5px);
+                        min-width: 150px;
                     }
                 }
             }
 
             .item-arr-inputs-skill {
                 input {
-                    width: 90%;
+                    width: 100%;
                 }
             }
         }
@@ -575,5 +604,59 @@ body.fixed .header-fixed .header-limiter nav {
         text-align: center;
         width: 80%;
         font-weight: 400;
+    }
+}
+
+// Responsive styles
+@media screen and (max-width: 1200px) {
+    .form-container {
+        .form-box1 {
+            .cv-container {
+                max-width: 90%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .form-container {
+        .form-box1 {
+            .cv-container {
+                max-width: 95%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .form-container {
+        flex-direction: column;
+        margin: 0;
+        padding: 10px;
+
+        .form-box1 {
+            height: auto;
+            min-height: 82vh;
+            margin-bottom: 20px;
+
+            .cv-container {
+                max-width: 100%;
+
+                .cv-header {
+                    flex-direction: column;
+                    align-items: flex-start;
+
+                    .left-row, .right-row {
+                        max-width: 100%;
+                        margin: 10px 0;
+                    }
+                }
+            }
+        }
+
+        .form-box2 {
+            max-width: 100%;
+            height: auto;
+        }
     }
 }
