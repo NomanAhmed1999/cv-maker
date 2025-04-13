@@ -286,9 +286,11 @@ body.fixed .header-fixed .header-limiter nav {
   align-content: center;
   justify-content: center;
   margin: 1%;
+  gap: 20px;
 }
 .form-container .form-box1 {
-  width: 900px;
+  width: 100%;
+  max-width: 900px;
   display: flex;
   justify-content: center;
   flex-direction: row;
@@ -300,90 +302,115 @@ body.fixed .header-fixed .header-limiter nav {
   overflow: auto;
 }
 .form-container .form-box1 .cv-container {
-  width: 80%;
-  /* height: 82vh; */
-  /* overflow: auto; */
-  /* border: 2px solid blue; */
+  width: 100%;
+  max-width: 80%;
   background: white;
 }
 .form-container .form-box1 .cv-container .cv-header {
   background: #843c0c;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
-  flex-wrap: no-wrap;
   align-content: center;
   align-items: center;
+  padding: 20px 0;
 }
-.form-container .form-box1 .cv-container .left-row {
+.form-container .form-box1 .cv-container .cv-header .left-row {
   text-align: start;
   color: white;
-  width: 38%;
+  width: 100%;
+  max-width: 38%;
   margin-left: 2%;
+  padding: 10px;
 }
-.form-container .form-box1 .cv-container .left-row h2 {
+.form-container .form-box1 .cv-container .cv-header .left-row h2 {
   margin: 0;
   font-family: serif;
+  font-size: clamp(1.5rem, 2vw, 2rem);
 }
-.form-container .form-box1 .cv-container .left-row p {
+.form-container .form-box1 .cv-container .cv-header .left-row p {
   margin: 0;
   font-family: inherit;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
 }
-.form-container .form-box1 .cv-container .right-row {
+.form-container .form-box1 .cv-container .cv-header .right-row {
   text-align: start;
   color: white;
-  width: 58%;
+  width: 100%;
+  max-width: 58%;
   margin: 0 2% 2% 0;
+  padding: 10px;
 }
-.form-container .form-box1 .cv-container .right-row span {
+.form-container .form-box1 .cv-container .cv-header .right-row span {
   font-weight: 700;
-  font-size: 18px;
+  font-size: clamp(0.9rem, 1.2vw, 1.1rem);
 }
-.form-container .form-box1 .cv-container .right-row p {
+.form-container .form-box1 .cv-container .cv-header .right-row p {
   margin: 0;
+  font-size: clamp(0.8rem, 1vw, 1rem);
 }
-.form-container .form-box1 .cv-body h3 {
+.form-container .form-box1 .cv-container .cv-body {
+  padding: 20px;
+}
+.form-container .form-box1 .cv-container .cv-body h3 {
   text-align: start;
   margin: 4% 0px -1.8% 1%;
   color: #994d12;
   font-weight: bolder;
   font-family: sans-serif;
   padding: 1%;
+  font-size: clamp(1.2rem, 1.5vw, 1.5rem);
 }
-.form-container .form-box1 .cv-body p {
+.form-container .form-box1 .cv-container .cv-body p {
   text-align: start;
   margin: 0 0 0 2%;
+  font-size: clamp(0.9rem, 1.1vw, 1.1rem);
 }
-.form-container .form-box1 .cv-body ul {
+.form-container .form-box1 .cv-container .cv-body ul {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   align-items: flex-start;
   max-height: 120px;
   text-align: start;
+  padding-left: 20px;
+  font-size: clamp(0.9rem, 1.1vw, 1.1rem);
 }
-.form-container .form-box1 .cv-body .edu-h {
+.form-container .form-box1 .cv-container .cv-body .edu-h {
   font-weight: 900;
-  font-size: 20px;
+  font-size: clamp(1rem, 1.2vw, 1.2rem);
 }
-.form-container .form-box1 .cv-body .edu-field {
+.form-container .form-box1 .cv-container .cv-body .edu-field {
   font-weight: 600;
-  font-size: 18px;
+  font-size: clamp(0.9rem, 1.1vw, 1.1rem);
   font-family: inherit;
 }
 .form-container .form-box2 {
-  width: 30%;
-  height: 89vh;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  min-height: 89vh;
   padding: 2%;
-  height: 85vh;
   overflow: auto;
 }
-.form-container .form-box2 label {
-  color: white;
+.form-container .form-box2 .form-group {
+  width: 100%;
+}
+.form-container .form-box2 .row {
+  margin: 0;
+}
+.form-container .form-box2 .col {
+  padding: 0 5px;
+}
+.form-container .form-box2 input, .form-container .form-box2 textarea {
+  width: 100%;
+  margin: 10px 0;
 }
 .form-container .form-box2 .item-arr-container {
   border: 1px solid #5383d3;
   width: 100%;
-  margin: 5% 0 !important;
+  margin: 20px 0 !important;
+  padding: 10px;
 }
 .form-container .form-box2 .item-arr-container .item-arr {
   display: flex;
@@ -392,24 +419,33 @@ body.fixed .header-fixed .header-limiter nav {
   justify-content: space-around;
   align-items: baseline;
   align-content: center;
+  margin-bottom: 10px;
 }
 .form-container .form-box2 .item-arr-container .item-arr i {
   display: block;
   color: #5383d3;
+  cursor: pointer;
+  font-size: 1.2rem;
 }
 .form-container .form-box2 .item-arr-container .item-arr p {
   color: #5383d3;
+  margin: 0;
 }
 .form-container .form-box2 .item-arr-container .item-arr-inputs-con {
   max-height: 150px;
   overflow: auto;
 }
+.form-container .form-box2 .item-arr-container .item-arr-inputs-con .item-arr-inputs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
 .form-container .form-box2 .item-arr-container .item-arr-inputs-con .item-arr-inputs input {
-  width: 20%;
-  display: inline-block;
+  width: calc(50% - 5px);
+  min-width: 150px;
 }
 .form-container .form-box2 .item-arr-container .item-arr-inputs-skill input {
-  width: 90%;
+  width: 100%;
 }
 
 .color-pur {
@@ -488,4 +524,42 @@ body.fixed .header-fixed .header-limiter nav {
   text-align: center;
   width: 80%;
   font-weight: 400;
+}
+
+@media screen and (max-width: 1200px) {
+  .form-container .form-box1 .cv-container {
+    max-width: 90%;
+  }
+}
+@media screen and (max-width: 992px) {
+  .form-container .form-box1 .cv-container {
+    max-width: 95%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .form-container {
+    flex-direction: column;
+    margin: 0;
+    padding: 10px;
+  }
+  .form-container .form-box1 {
+    height: auto;
+    min-height: 82vh;
+    margin-bottom: 20px;
+  }
+  .form-container .form-box1 .cv-container {
+    max-width: 100%;
+  }
+  .form-container .form-box1 .cv-container .cv-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .form-container .form-box1 .cv-container .cv-header .left-row, .form-container .form-box1 .cv-container .cv-header .right-row {
+    max-width: 100%;
+    margin: 10px 0;
+  }
+  .form-container .form-box2 {
+    max-width: 100%;
+    height: auto;
+  }
 }/*# sourceMappingURL=global-style.css.map */
